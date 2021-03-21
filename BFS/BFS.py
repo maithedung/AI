@@ -7,7 +7,7 @@ Input: G = (V,E)
 - TG: Dinh dich. TG thuoc Goal
 - Bn: Dinh ke voi dinh dang xet
 
-Output: Duong di p tu T0 den 1 dinh TG thuoc Goal
+Output: Danh sach cac dinh da duyet tu T0 den 1 dinh TG thuoc Goal
 
 Phuong phap: 2 danh sach mo va dong theo nguyen tac FIFO
 
@@ -28,23 +28,24 @@ graph = {
 def bfs(graph, T0, Goal):
     mo = []  # Chua cac dinh dang xet
     dong = []  # Chua cac dinh da xet
-    p = [] # Duong di
 
     mo.append(T0)
-    dong.append(T0)
 
     while mo:
+        print(f'{mo}, {dong}')
         m = mo.pop(0)
-        p.append(m)
         if m in Goal:
-            return p
+            dong.append(m)
+            print(f'{mo}, {dong}')
+            return True
 
         for Bn in graph[m]:
-            if Bn not in dong:
-                dong.append(Bn)
+            if Bn not in mo:
                 mo.append(Bn)
-    return 'Khong co duong di'
+        dong.append(m)
+
+    return False
 
 
 print("Following is the Breadth-First Search")
-print(bfs(graph, '5', ['4']))
+print(bfs(graph, '5', ['2']))
