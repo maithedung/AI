@@ -35,7 +35,6 @@ def bfs(graph, T0, Goal):
 
     while mo:
         m = mo.pop(0)
-        print(m)
         p.append(m)
         if m in Goal:
             return p
@@ -48,4 +47,4 @@ def bfs(graph, T0, Goal):
 
 
 print("Following is the Breadth-First Search")
-print(bfs(graph, '8', ['3']))
+print(bfs(graph, '5', ['4']))
