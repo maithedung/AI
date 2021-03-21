@@ -26,7 +26,7 @@ graph = {
 
 
 def bfs(graph, T0, Goal):
-    mo = []  # Chua cac dinh dang xet
+    mo = [] # Chua cac dinh dang xet
     dong = []  # Chua cac dinh da xet
 
     mo.append(T0)
@@ -40,7 +40,7 @@ def bfs(graph, T0, Goal):
             return True
 
         for Bn in graph[m]:
-            if Bn not in mo:
+            if Bn not in dong and Bn not in mo:
                 mo.append(Bn)
         dong.append(m)
 
@@ -48,4 +48,4 @@ def bfs(graph, T0, Goal):
 
 
 print("Following is the Breadth-First Search")
-print(bfs(graph, '5', ['2']))
+print(bfs(graph, '5', ['8']))
