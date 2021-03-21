@@ -7,7 +7,7 @@ Input: G = (V,E)
 - TG: Dinh dich. TG thuoc Goal
 - Bn: Dinh ke voi dinh dang xet
 
-Output: Duong di p tu T0 den 1 dinh TG thuoc Goal
+Output: Danh sach cac dinh da duyet tu T0 den 1 dinh TG thuoc Goal
 
 Phuong phap: 2 danh sach mo va dong theo nguyen tac LIFO
 
