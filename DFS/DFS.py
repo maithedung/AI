@@ -48,4 +48,4 @@ def dfs(graph, T0, Goal):
 
 
 print("Following is the Breadth-First Search")
-print(dfs(graph, '5', ['9']))
+print(dfs(graph, '2', ['8']))

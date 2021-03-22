@@ -1,34 +1,3 @@
-# Đề bài: không gian trạng thái bt 1
-#   0 1 2 3 4 5 6 7 8
-#
-#   S A B C D E F G H
-# S 0 1 1 1 0 0 0 0 0
-# A 1 0 0 0 1 0 0 0 0
-# B 1 0 0 0 1 1 0 1 0
-# C 1 0 0 0 0 1 0 0 0
-# D 0 1 0 0 0 0 1 0 0
-# E 0 0 1 1 0 0 1 0 1
-# F 0 0 0 0 1 1 0 1 0
-# G 0 0 1 0 0 0 1 0 1
-# H 0 0 0 0 0 1 0 1 0
-def read_file(file_path):
-    f = open(file_path)
-    lines = f.readlines()
-    lines = [line.strip() for line in lines]
-    data = []
-    for line in lines:
-        data.append([int(num) for num in line.split(" ")])
-    return data
-
-
-def map_data_to_tree(tree, data):
-    for idx, row in enumerate(data):
-        tree.add_node(node_name=idx)
-        for idx_col, col in enumerate(row):
-            if col == 1:
-                tree.add_edge(start_name=idx, end_name=idx_col)
-
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -120,8 +89,8 @@ def Breadth_First_Search(tree, initialState, goalTest):
         state = frontier.pop(0)
         state_node = Node(state)
         explored.append(state)
-        # print("Explored >> ", explored)
         if goalTest == state:
+            print("Explored >> ", explored)
             return True
         index_state = tree.get_index(state_node)
         for neighbor in tree.nodes[index_state].get_children():
